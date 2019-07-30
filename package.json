@@ -1,0 +1,29 @@
+{
+  "name": "react-native-image-utils",
+  "version": "0.0.1",
+  "description": "Image utils for react native",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yangga/react-native-image-utils"
+  },
+  "keywords": [
+    "react-native",
+    "image",
+    "resize",
+    "crop",
+    "color",
+    "contrast",
+    "saturation",
+    "brightness"
+  ],
+  "author": "yangga",
+  "license": "MIT",
+  "peerDependencies": {
+    "react": "16.0.0-alpha.6",
+    "react-native": "0.44.3"
+  }
+}
