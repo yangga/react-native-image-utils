@@ -74,9 +74,9 @@ const commands = []
 commands.push({
     cmd: 'scaleCSB',
     param: {
-        contrast: 1.2,
-        saturation: 1.5,
-        brightness: 1.1,
+        contrast: 50,
+        saturation: 10,
+        brightness: -30,
     }
 })
 
