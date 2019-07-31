@@ -93,10 +93,21 @@ commands.push({
     }
 })
 
+// then, do something more...
+commands.push({
+    cmd: ...,
+    param: {
+        ...
+    }
+})
+
+...
+
+// Let's execute commands
 // One execute to multiful commands. It creates image file just 1 time.
 proxies(null, uri, commands)
 .then(res => {
-    // 'response.uri' is new path of created image
+    // 'response.uri' is new URI of created image
 })
 .catch(err => {
     console.error(err)
@@ -109,7 +120,12 @@ Name | Description
 ------ | -----------
 cropPerspective | cropping by perspective
 cropRoundedCorner | cropping rounded image
-scaleCSB | scaling color by Contrast, Saturation and Brightness
+scaleCSB | scaling color by Contrast, Saturation and Brightness. (In developping. It makes different result on ios and android.)
 transOrientRotate | rotating image by 90 degrees (90, 180, 270 only)
 proxy | single command calling
 proxies | multiful command calling
+
+> and, you can check any interfaces and parameters in `index.d.ts` file.
+
+## Contribution
+Welcome to anyone.
