@@ -1,6 +1,6 @@
 {
   "name": "react-native-image-utils",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Image utils for react native",
   "main": "index.js",
   "scripts": {

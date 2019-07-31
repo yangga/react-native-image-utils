@@ -56,6 +56,16 @@ public class RNImageUtilsModule extends ReactContextBaseJavaModule {
   }
 
   @ReactMethod
+  public void metaReadData(String imagePath, final Callback callback) {
+        Meta.metaReadData(imagePath, callback);
+  }
+
+  @ReactMethod
+  public void metaWriteData(String imagePath,ReadableMap metadataRM, final Callback callback){
+      Meta.metaWriteData(imagePath, metadataRM, callback);
+  }
+
+  @ReactMethod
   public void proxies(final ReadableMap outOptions, final String imageUri, final ReadableArray proxyParams, final Callback callback) {
       try {
           Bitmap bmp = Picasso.with(this.reactContext)

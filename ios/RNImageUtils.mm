@@ -4,6 +4,7 @@
 
 #include "Procedure.h"
 #include "Crop.h"
+#include "Meta.h"
 #include "Scale.h"
 #include "Trans.h"
 
@@ -20,6 +21,14 @@ NSDictionary *procedures = [NSDictionary dictionaryWithObjectsAndKeys:
                             nil];
 
 RCT_EXPORT_MODULE();
+
+RCT_EXPORT_METHOD(metaReadData:(NSString *)imagePath callback:(RCTResponseSenderBlock)callback){
+    [Meta metaReadData:imagePath callback:callback];
+}
+
+RCT_EXPORT_METHOD(metaWriteData:(NSString *)imagePath metaDataInfo:(NSDictionary *)metaDataInfo callback:(RCTResponseSenderBlock)callback){
+    [Meta metaWriteData:imagePath metaDataInfo:metaDataInfo callback:callback];
+}
 
 RCT_EXPORT_METHOD(proxies:(NSDictionary *)outOption imageSrcUri:(NSString *)imageSrcUri proxyParams:(NSArray *)proxyParams callback:(RCTResponseSenderBlock)callback)
 {
@@ -107,12 +116,11 @@ RCT_EXPORT_METHOD(proxies:(NSDictionary *)outOption imageSrcUri:(NSString *)imag
         CGImageRef cgimage = [context createCGImage:ciImage fromRect:[resImage extent]];
         UIImage *image = [UIImage imageWithCGImage:cgimage];
         
-        if (!saveImage(fullPath, image, @"PNG", quality)) {
+        if (!saveImage(fullPath, image, format, quality)) {
             callback(@[@"Can't save the image. Check your compression format and your output path", @""]);
             return;
         }
         NSURL *fileUrl = [[NSURL alloc] initFileURLWithPath:fullPath];
-        NSString *fileName = fileUrl.lastPathComponent;
         NSError *attributesError = nil;
         NSDictionary *fileAttributes = [[NSFileManager defaultManager] attributesOfItemAtPath:fullPath error:&attributesError];
         NSNumber *fileSize = fileAttributes == nil ? 0 : [fileAttributes objectForKey:NSFileSize];

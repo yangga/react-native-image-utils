@@ -1,6 +1,5 @@
 import {
     NativeModules,
-    Platform,
 } from 'react-native';
 
 function proxies(outOption, imgSrcUri, proxyParams) {

@@ -7,6 +7,10 @@ export interface Response {
     height: number;
 }
 
+export interface ImageMeta {
+    
+}
+
 export interface OutputOption {
     format: 'JPEG' | 'PNG';
     quality: number;
@@ -51,6 +55,7 @@ export interface ProxyParam {
     params: object
 }
 
+// image processing functions
 export function cropPerspective(outOption: OutputOption, imgSrcUri: string, param: Coordnates): Promise<Response>;
 export function cropRoundedCorner(outOption: OutputOption, imgSrcUri: string, cornerSize: CornerRadiusParam): Promise<Response>;
 
@@ -61,3 +66,8 @@ export function transResize(outOption: OutputOption, imgSrcUri: string, param: O
 
 export function proxy(outOption: OutputOption, imgSrcUri: string, param: ProxyParam): Promise<Response>;
 export function proxies(outOption: OutputOption, imgSrcUri: string, proxyParams: Array<ProxyParam>): Promise<Response>;
+
+// meta data functions
+export function metaReadData(imgSrcUri: string): Promise<ImageMeta>;
+export function metaWriteData(imgSrcUri: string, metaData: ImageMeta): Promise<void>;
+

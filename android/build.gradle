@@ -37,6 +37,7 @@ repositories {
 dependencies {
     implementation project(':openCVLibrary310')
     implementation "com.squareup.picasso:picasso:2.3.3"
+    implementation "com.drewnoakes:metadata-extractor:2.12.0"
     compileOnly "com.facebook.react:react-native:${safeExtGet('reactNativeVersion', '+')}"
 }
   
