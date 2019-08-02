@@ -103,9 +103,16 @@ commands.push({
 
 ...
 
+// You can also choose some options for output file
+const OutputOption = {
+    format: 'JPEG',
+    quality: 0.9,
+    ...
+}
+
 // Let's execute commands
 // One execute to multiful commands. It creates image file just 1 time.
-proxies(null, uri, commands)
+proxies(OutputOption, uri, commands)
 .then(res => {
     // 'response.uri' is new URI of created image
 })
@@ -126,6 +133,13 @@ proxy | single command calling
 proxies | multiful command calling
 
 > and, you can check any interfaces and parameters in `index.d.ts` file.
+
+## Output Options
+Name | Description
+------ | -----------
+format | Image file format
+quality | Image quality
+path | Specified path of new image file
 
 ## Contribution
 Welcome to anyone.
