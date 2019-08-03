@@ -28,9 +28,7 @@ double adjustValue(double value, double srcMin, double srcMax, double dstMin, do
     const double contrast = adjustValue([param[@"contrast"] doubleValue], -100.0, 100.0, 0, 2);
     const double saturation = adjustValue([param[@"saturation"] doubleValue], -100.0, 100.0, 0, 3);
     const double brightness = adjustValue([param[@"brightness"] doubleValue], -100.0, 100.0, -1, 1);
-    
-    NSLog(@"#### scaleCSB : %f / %f / %f", contrast, saturation, brightness);
-    
+        
     CIFilter *colorControlsFilter = [CIFilter filterWithName:@"CIColorControls"];
     [colorControlsFilter setDefaults];
     [colorControlsFilter setValue:ciImage forKey:@"inputImage"];
