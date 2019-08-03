@@ -48,7 +48,7 @@ CGPoint cartesianForPoint(CGPoint point, float height) {
     CIImage *ciImage = [params objectAtIndex:0];
     NSDictionary *param = [params objectAtIndex:1];
     
-    const double radius = [param[@"radius"] doubleValue];
+    const double radius = [param[@"radius"] doubleValue] * M_PI;
     NSObject *noantialias = param[@"noantialias"];
     
     UIImage *image = [UIImage imageWithCIImage:ciImage];
