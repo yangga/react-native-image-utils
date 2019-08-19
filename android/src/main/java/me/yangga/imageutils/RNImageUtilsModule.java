@@ -126,7 +126,7 @@ public class RNImageUtilsModule extends ReactContextBaseJavaModule {
       } else {
           File outputDir = this.reactContext.getCacheDir(); // context being the Activity pointer
           newFile = File.createTempFile("tempRNImageUtil", "."+format, outputDir);
-          outputPath = newFile.toPath().toString();
+          outputPath = newFile.getAbsolutePath();
       }
 
       byte[] bitmapData = bitmapToData(bmpRes, format, quality);
