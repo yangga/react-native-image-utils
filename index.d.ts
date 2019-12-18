@@ -34,7 +34,7 @@ export interface Coordnates {
 
 export type OrientDegrees = 90 | 180 | 270;
 
-export interface ScaleCSB {
+export interface ScaleCSBParam {
   contrast: number; // -100 ~ 100, default: 0
   saturation: number; // -100 ~ 100, default: 0
   brightness: number; // -100 ~ 100, default: 0
@@ -46,6 +46,11 @@ export interface CornerRadiusParam {
 
 export interface OrientRotateParam {
   degrees: OrientDegrees;
+}
+
+export interface ResizeParam {
+  width: number;
+  height: number;
 }
 
 export interface ProxyParam {
@@ -62,13 +67,13 @@ export function cropPerspective(
 export function cropRoundedCorner(
   outOption: OutputOption,
   imgSrcUri: string,
-  cornerSize: CornerRadiusParam
+  param: CornerRadiusParam
 ): Promise<Response>;
 
 export function scaleCSB(
   outOption: OutputOption,
   imgSrcUri: string,
-  param: ScaleCSB
+  param: ScaleCSBParam
 ): Promise<Response>;
 
 export function transOrientRotate(
@@ -79,7 +84,7 @@ export function transOrientRotate(
 export function transResize(
   outOption: OutputOption,
   imgSrcUri: string,
-  param: OrientRotateParam
+  param: ResizeParam
 ): Promise<Response>;
 
 export function proxy(
