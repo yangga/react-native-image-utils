@@ -19,14 +19,14 @@ $ react-native link react-native-image-utils
 
 #### Android Only
 
-If you do not already have openCV installed in your project, add this line to your `settings.gradle`
+1. If you do not already have openCV installed in your project, add this line to your `settings.gradle`
 
 ```
 include ':openCVLibrary310'
 project(':openCVLibrary310').projectDir = new File(rootProject.projectDir,'../node_modules/react-native-image-utils/android/ZdependencyZopenCVLibrary310')
 ```
 
-Add below into MainApplication.java
+2. Add below into MainApplication.java
 ```java
 public class MainApplication extends Application implements ReactApplication {
     ////// insert this
@@ -35,16 +35,6 @@ public class MainApplication extends Application implements ReactApplication {
     }
     /////////////////////
 ```
-
-
-in MainApplication.java
-public class MainApplication ... {
-```
-static{
-    System.loadLibrary("opencv_java3");
-  }
-```
-
 
 ## Usage
 
