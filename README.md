@@ -36,6 +36,16 @@ public class MainApplication extends Application implements ReactApplication {
     /////////////////////
 ```
 
+
+in MainApplication.java
+public class MainApplication ... {
+```
+static{
+    System.loadLibrary("opencv_java3");
+  }
+```
+
+
 ## Usage
 
 #### Rotating(90 degrees only) images
