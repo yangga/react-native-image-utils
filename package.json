@@ -1,6 +1,6 @@
 {
   "name": "react-native-image-utils",
-  "version": "0.0.7",
+  "version": "0.0.9",
   "description": "Image utils for react native",
   "main": "index.js",
   "scripts": {
@@ -23,7 +23,7 @@
   "author": "yangga",
   "license": "MIT",
   "peerDependencies": {
-    "react": "16.0.0-alpha.6",
-    "react-native": "0.44.3"
+    "react": ">=16.0.0-alpha.6",
+    "react-native": ">=0.44.3"
   }
 }
