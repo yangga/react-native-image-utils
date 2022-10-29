@@ -52,48 +52,56 @@ export interface ResizeParam {
   width: number;
   height: number;
 }
+export interface ScaleParam {
+  scale: number;
+}
 
 export interface ProxyParam {
-  cmd: string;
-  params: object;
+  cmd: "cropPerspective" | "cropRoundedCorner" | "scaleCSB" | "transOrientRotate" | "transResize" | "transScale";
+  param: unknown;
 }
 
 // image processing functions
 export function cropPerspective(
-  outOption: OutputOption,
+  outOption: OutputOption | null | undefined,
   imgSrcUri: string,
   param: Coordnates
 ): Promise<Response>;
 export function cropRoundedCorner(
-  outOption: OutputOption,
+  outOption: OutputOption | null | undefined,
   imgSrcUri: string,
   param: CornerRadiusParam
 ): Promise<Response>;
 
 export function scaleCSB(
-  outOption: OutputOption,
+  outOption: OutputOption | null | undefined,
   imgSrcUri: string,
   param: ScaleCSBParam
 ): Promise<Response>;
 
 export function transOrientRotate(
-  outOption: OutputOption,
+  outOption: OutputOption | null | undefined,
   imgSrcUri: string,
   param: OrientRotateParam
 ): Promise<Response>;
 export function transResize(
-  outOption: OutputOption,
+  outOption: OutputOption | null | undefined,
   imgSrcUri: string,
   param: ResizeParam
 ): Promise<Response>;
+export function transScale(
+  outOption: OutputOption | null | undefined,
+  imgSrcUri: string,
+  param: ScaleParam
+): Promise<Response>;
 
 export function proxy(
-  outOption: OutputOption,
+  outOption: OutputOption | null | undefined,
   imgSrcUri: string,
   param: ProxyParam
 ): Promise<Response>;
 export function proxies(
-  outOption: OutputOption,
+  outOption: OutputOption | null | undefined,
   imgSrcUri: string,
   proxyParams: Array<ProxyParam>
 ): Promise<Response>;

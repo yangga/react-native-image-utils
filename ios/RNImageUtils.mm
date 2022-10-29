@@ -18,6 +18,7 @@ NSDictionary *procedures = [NSDictionary dictionaryWithObjectsAndKeys:
                             PROCEDURE(Scale, scaleCSB:), @"scaleCSB",
                             PROCEDURE(Trans, transOrientRotate:), @"transOrientRotate",
                             PROCEDURE(Trans, transResize:), @"transResize",
+                            PROCEDURE(Trans, transScale:), @"transScale",
                             nil];
 
 RCT_EXPORT_MODULE();

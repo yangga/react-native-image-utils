@@ -45,4 +45,19 @@
     return [CIImage imageWithCGImage: [newImage CGImage]];
 }
 
+- (CIImage *)transScale:(NSArray *)params
+{
+    CIImage *ciImage = [params objectAtIndex:0];
+    NSDictionary *param = [params objectAtIndex:1];
+    
+    const float scale = [param[@"scale"] floatValue];
+    
+    CIFilter *f = [CIFilter filterWithName:@"CILanczosScaleTransform"];
+    [f setValue:ciImage forKey:kCIInputImageKey];
+    [f setValue:[NSNumber numberWithFloat:scale] forKey:kCIInputScaleKey];
+    [f setValue:[NSNumber numberWithFloat:1.0] forKey:kCIInputAspectRatioKey];
+    
+    return [f outputImage];
+}
+
 @end

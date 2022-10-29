@@ -14,6 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (CIImage *)transOrientRotate:(NSArray *)params;
 - (CIImage *)transResize:(NSArray *)params;
+- (CIImage *)transScale:(NSArray *)params;
 
 @end
 

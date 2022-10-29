@@ -34,4 +34,14 @@ final class Trans {
 
         return dst;
     }
+
+    @ImageUtilsProcedure
+    static Mat transScale(Mat src, ReadableMap param) {
+        final double scale = param.getDouble("scale");
+
+        Mat dst = new Mat();
+        Imgproc.resize(src, dst, new Size(src.width()*scale, src.height()*scale));
+
+        return dst;
+    }
 }
